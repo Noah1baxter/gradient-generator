@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Generator</title>
+<style>
+body{font-family:Arial;background:#f1f5f9;padding:25px;text-align:center}
+main{max-width:600px;margin:auto;background:white;padding:30px;border-radius:16px}
+#preview{height:230px;border-radius:12px;margin:25px 0}
+input[type=color]{width:80px;height:50px;border:0;cursor:pointer}
+input[type=range]{width:90%}
+button{background:#334155;color:white;border:0;padding:13px 20px;border-radius:8px;cursor:pointer}
+#code{background:#e2e8f0;padding:15px;border-radius:8px;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main>
+<h1>CSS Gradient Generator</h1>
+<p>Create beautiful gradients for your website.</p>
+<input type="color" id="color1" value="#2563eb" oninput="generate()">
+<input type="color" id="color2" value="#ec4899" oninput="generate()">
+<p>Gradient Angle</p>
+<input type="range" id="angle" min="0" max="360" value="135" oninput="generate()">
+<div id="preview"></div>
+<p id="code"></p>
+<button onclick="copyCode()">Copy CSS</button>
+<p id="status"></p>
+</main>
+<script>
+function generate(){
+ const c1=document.getElementById("color1").value;
+ const c2=document.getElementById("color2").value;
+ const angle=document.getElementById("angle").value;
+ const gradient="linear-gradient("+angle+"deg, "+c1+", "+c2+")";
+ document.getElementById("preview").style.background=gradient;
+ document.getElementById("code").textContent="background: "+gradient+";";
+ document.getElementById("status").textContent="";
+}
+async function copyCode(){
+ try{
+  await navigator.clipboard.writeText(document.getElementById("code").textContent);
+  document.getElementById("status").textContent="CSS copied!";
+ }catch{
+  document.getElementById("status").textContent="Please copy manually.";
+ }
+}
+generate();
+</script>
+</body>
+</html>
