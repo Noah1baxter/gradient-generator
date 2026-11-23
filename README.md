@@ -1,23 +1,23 @@
-# Gradient Generator
+## CSS Gradient Generator
 
-A CSS tool for creating custom color gradients.
+This project provides a simple interface
+for experimenting with CSS gradients.
 
-## Features
+### Customization Options
 
-- Color selection
-- Angle adjustment
-- CSS code generation
+- First color selection
+- Second color selection
+- Gradient direction
+- Live preview
 
-## How to Use
+### How to Use
 
-Choose two colors and adjust the gradient angle.
+1. Select the gradient colors.
+2. Adjust the direction.
+3. Preview the generated gradient.
+4. Copy the CSS output if supported.
 
-## Technologies
+### Development Notes
 
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Maintain readable CSS output
+and consistent color formatting.
