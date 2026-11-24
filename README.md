@@ -21,3 +21,12 @@ for experimenting with CSS gradients.
 
 Maintain readable CSS output
 and consistent color formatting.
+## Manual Testing Checklist
+
+- [ ] Select two colors and review the gradient preview.
+- [ ] Move the angle control and inspect the resulting CSS.
+- [ ] Copy the generated CSS and confirm the colors are correct.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
